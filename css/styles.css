@@ -1,0 +1,88 @@
+@font-face {
+  font-family: 'Dark Euphorigenic';
+  src: url('./fonts/DarkEuphorigenic.ttf');
+}
+
+
+body {
+  background-color: #181a1b;
+  color: #bcbbb9;
+}
+
+
+a:link { color: #4fb0ff; }
+main a:visited { color: #ae98f2; }
+input:focus { background: #ffe; }
+header img { width: 100%; }
+header a:hover { text-shadow: 0px 0px 14px #00daff; }
+
+header {
+  margin: -8px;
+  background-color: black;
+  display: grid;
+}
+
+header a {
+  width: 20%;
+  display: inline-block;
+  font-family: 'Dark Euphorigenic', serif;
+  font-size: 34px;
+  color: #bab9bb;
+  text-decoration: none;
+  transition: text-shadow 0.3s ease;
+}
+
+#opVideo {
+  display: block;
+  margin: auto;
+}
+
+#gameList {
+  display: table;
+  margin: auto;
+  padding-bottom: 10px;
+}
+
+#gameList > li:hover {
+  text-shadow: 0px 0px 8px #b5c513;
+  cursor: pointer;
+}
+
+#gameList > li { transition: text-shadow 0.3s ease; }
+
+#buttonPlay {
+  width: 200px;
+  height: 60px;
+  display: block;
+  margin: auto;
+  font-size: 24px;
+  color: #116843;
+}
+
+img[alt="RAS"] {
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  width: 600px;
+  z-index: -2;
+}
+
+footer {
+  position: relative;
+  bottom: 5px;
+  width: 100%;
+  text-align: center;
+}
+
+#latin {
+  display: block;
+  margin-left: 32%;
+  margin-right: 32%;
+  text-align: justify;
+  text-indent: 2.5em;
+}
+
+header > section {
+  width: 100%;
+  text-align: center;
+}
