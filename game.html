@@ -20,12 +20,31 @@
     <main>
       <br>
       <section>
-        <ul id="gameList">
+        <!-- <ul id="gameList">
           <li id="Sakamoto">Sakamoto</li>
           <li id="Ajin">Ajin</li>
           <li id="Overlord">Overlord</li>
-        </ul>
-        <video id="opVideo" src="#" controls width="680"></video>
+        </ul> -->
+        <button id="startButton">Старт!</button>
+        <select name="opTitle" id="opTitleNames">
+          <option value="none" hidden="">---------</option>
+          <option value="Ajin">Ajin</option>
+          <option value="Ansatsu Kyoushitsu">Ansatsu Kyoushitsu</option>
+          <option value="Biohazard: Vendetta">Biohazard: Vendetta</option>
+          <option value="Code Geass">Code Geass</option>
+          <option value="Godzilla">Godzilla</option>
+          <option value="JoJo's Bizarre Adventure">JoJo's Bizarre Adventure</option>
+          <option value="Overlord">Overlord</option>
+          <option value="Owari no Seraph">Owari no Seraph</option>
+          <option value="Sakamoto Desu ga?">Sakamoto Desu ga?</option>
+          <option value="Servamp">Servamp</option>
+          <option value="Towa no Quon">Towa no Quon</option>
+          <option value="Yakusoku no Neverland">Yakusoku no Neverland</option>
+        </select>
+        <button id="nextButton" disabled>Ответить!</button>
+        <p id="showResult">Жду ответа</p>
+        <div class="resultDiv">Набрано очков: </div><div id="pointsDiv" class="resultDiv">0</div>
+        <video id="opVideo" src="#" !controls width="680" height="382,5"></video>
 
       </section>
     </main>

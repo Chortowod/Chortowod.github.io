@@ -35,6 +35,8 @@ header a {
 #opVideo {
   display: block;
   margin: auto;
+  width: 680px;
+  height: 382,5px;
 }
 
 #gameList {
@@ -85,4 +87,8 @@ footer {
 header > section {
   width: 100%;
   text-align: center;
+}
+
+.resultDiv {
+  display: inline;
 }
