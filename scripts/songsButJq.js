@@ -13,7 +13,7 @@ var gameArray = [
 
 
 
-$('#opVideo').prop('volume', 0.35);
+$('#opVideo').prop('volume', 0.1);
 $('#startButton').on('click', gameStart);
 
 var count = 0;

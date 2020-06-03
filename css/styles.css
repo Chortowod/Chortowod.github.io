@@ -13,6 +13,11 @@ main {
   margin-top: 10px;
 }
 
+.preload * {
+  transition: none !important;
+}
+
+
 main a:link { color: #4fb0ff; }
 main a:visited { color: #ae98f2; }
 input:focus { background: #ffe; }
@@ -41,9 +46,8 @@ header {
   position: absolute;
   border-radius: 0px 0px 20px 20px;
   padding-top: 1.2%;
-  width: 20%;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.5s ease;
   pointer-events: none;
 }
 

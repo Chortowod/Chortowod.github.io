@@ -15,7 +15,7 @@ var gameArray = [
   {"gameName":"Servamp","gameUrl":"https://files.catbox.moe/mvvrau.webm"}
 ];
 var elem = document.getElementById("opVideo");
-elem.volume = 0.35;
+elem.volume = 0.1;
 var result = document.getElementById("showResult");
 var pointsDiv = document.getElementById('pointsDiv');
 var selectAnswer = document.getElementsByTagName('select')[0];
