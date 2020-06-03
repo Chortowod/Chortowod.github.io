@@ -4,6 +4,10 @@
     <meta charset="utf-8">
     <title>Project Quiz</title>
     <link rel="stylesheet" href="css/styles.css" />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
+  />
   </head>
   <body>
 
@@ -14,6 +18,14 @@
         <a href="registration.html">Регистрация</a>
         <a href="users.html">Пользователи</a>
         <a href="contacts.html">Контакты</a>
+        <div class="menu-dropdown" href="account.html">
+          <span><a href="account.html">Профиль</a></span>
+          <div class="menu-dropdown-submenu">
+            <a href="account.html">Личный кабинет</a>
+            <a href="achievements.html">Достижения</a>
+            <a href="settings.html">Настройки</a>
+          </div>
+        </div>
       </section>
       <img src="./img/footer.jpg" alt="headerFootImg">
     </header>
@@ -50,5 +62,7 @@
 
     <br>
     <footer>&copy; Проект "Викторина" (название временное), 2020</footer>
+    <script type="text/javascript" src="scripts/jquery-3.5.1.js"></script>
+    <script src="scripts/indexCss.js"></script>
   </body>
 </html>

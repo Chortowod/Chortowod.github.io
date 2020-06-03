@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
+    
     <header>
       <img src="./img/header.jpg" alt="headerImg">
       <section>
@@ -13,6 +14,14 @@
         <a href="registration.html">Регистрация</a>
         <a href="users.html">Пользователи</a>
         <a href="contacts.html">Контакты</a>
+        <div class="menu-dropdown" href="account.html">
+          <span><a href="account.html">Профиль</a></span>
+          <div class="menu-dropdown-submenu">
+            <a href="account.html">Личный кабинет</a>
+            <a href="achievements.html">Достижения</a>
+            <a href="settings.html">Настройки</a>
+          </div>
+        </div>
       </section>
       <img src="./img/footer.jpg" alt="headerFootImg">
     </header>
@@ -51,6 +60,8 @@
 
     <br>
     <footer>&copy; Проект "Викторина" (название временное), 2020</footer>
-    <script type="text/javascript" src="scripts/songs.js"></script>
+
+    <script type="text/javascript" src="scripts/jquery-3.5.1.js"></script>
+    <script type="text/javascript" src="scripts/songsButJq.js"></script>
   </body>
 </html>

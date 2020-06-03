@@ -9,12 +9,15 @@ body {
   color: #bcbbb9;
 }
 
+main {
+  margin-top: 10px;
+}
 
-a:link { color: #4fb0ff; }
+main a:link { color: #4fb0ff; }
 main a:visited { color: #ae98f2; }
 input:focus { background: #ffe; }
 header img { width: 100%; }
-header a:hover { text-shadow: 0px 0px 14px #00daff; }
+/* header a:hover { text-shadow: 0px 0px 14px #00daff; } */
 
 header {
   margin: -8px;
@@ -22,11 +25,37 @@ header {
   display: grid;
 }
 
-header a {
-  width: 20%;
+.menu-dropdown a {
+  width: 100%;
+}
+
+.menu-dropdown-submenu a {
+  background-color: #49494947;
+}
+
+.menu-dropdown-submenu a:last-child {
+  border-radius: 0px 0px 20px 20px;
+}
+
+.menu-dropdown-submenu {
+  position: absolute;
+  border-radius: 0px 0px 20px 20px;
+  padding-top: 13px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.menu-dropdown:hover > .menu-dropdown-submenu {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+header a, .menu-dropdown {
   display: inline-block;
+  width: 19.5%;
   font-family: 'Dark Euphorigenic', serif;
-  font-size: 34px;
+  font-size: 28px;
   color: #bab9bb;
   text-decoration: none;
   transition: text-shadow 0.3s ease;
@@ -35,8 +64,8 @@ header a {
 #opVideo {
   display: block;
   margin: auto;
-  width: 680px;
-  height: 382,5px;
+  width: 720px;
+  height: 405px;
 }
 
 #gameList {
@@ -45,8 +74,8 @@ header a {
   padding-bottom: 10px;
 }
 
-#gameList > li:hover {
-  text-shadow: 0px 0px 8px #b5c513;
+header a:hover{
+  text-shadow: 0px 0px 14px #00daff;
   cursor: pointer;
 }
 
@@ -58,14 +87,16 @@ header a {
   display: block;
   margin: auto;
   font-size: 24px;
-  color: #116843;
+  color: #bab9bb;
+  background-color: #181a1b;
+  border-color: #5d5d5d;
 }
 
 img[alt="RAS"] {
   position: fixed;
   bottom: 0px;
   right: 0px;
-  width: 600px;
+  width: 31%;
   z-index: -2;
 }
 
