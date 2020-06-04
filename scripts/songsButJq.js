@@ -18,13 +18,14 @@ $('#startButton').on('click', gameStart);
 
 var count = 0;
 var points = 0;
+var greenB = "radial-gradient(circle at 93.3% 75%, rgba(0,255,0,.5), rgba(0,255,0,0) 70.71%) beige";
 
 function gameStart() {
   count = 0;
   points = 0;
-  $('#pointsDiv').html(points);
-  $('#showResult').html(" ");
-  $('#nextButton').on("click", gameNext).prop("disabled", false).html("Ответить!");;
+  $('#pointsDiv').html("Набрано очков: " + points);
+  $('#showResult').html("Жду ответа");
+  $('#nextButton').on("click", gameNext).prop("disabled", false).html("Ответить!");
   $('#startButton').off("click", gameStart).html("Стоп!").on("click", gameStop);
   gameChangeSrc();
 }
@@ -33,7 +34,8 @@ function gameStop() {
     $('#startButton').off("click", gameStop).html("Рестарт!").on("click", gameStart);
     $('#nextButton').off("click", gameNext).off("click", gameNextPlay).prop("disabled", true);
     $('#opVideo').prop('src', "#").trigger('pause');
-    $('#showResult').html("Игра окончена.");
+    $('#showResult').html("Игра окончена!");
+    $('.resultCircle').css('background-color', '');
 }
 
 function gameChangeSrc() {
@@ -45,12 +47,14 @@ function gameNext() {
     $('#nextButton').html("Дальше!");
     $('#opVideo').trigger('pause').prop('currentTime', 0).trigger('play');
     $('#opVideo').css('visibility', 'visible');
-    if ($('select').val() == gameArray[count].gameName) {
-        $('#showResult').html("Верно!");
-        $('#pointsDiv').html(++points);
+    if ($('#tags').val() == gameArray[count].gameName) {
+        $('.resultCircle').css('background-color', '#04ff00');
+        $('#showResult').html("Верно! Это " + gameArray[count].gameName);
+        $('#pointsDiv').html("Набрано очков: " + ++points);
     }
     else {
-        $('#showResult').html("Неверно!");
+        $('.resultCircle').css('background-color', '#ff0000');
+        $('#showResult').html("Неверно! Это " + gameArray[count].gameName);
     }
 
 }
@@ -60,11 +64,34 @@ function gameNextPlay() {
         gameStop();
         return;
     }
+    $('.resultCircle').css('background-color', '');
     $('#nextButton').off("click", gameNextPlay).on("click", gameNext);
     $('#nextButton').html("Ответить!");
     $('#opVideo').css('visibility', 'hidden');
-    $('#showResult').html(" ");
+    $('#showResult').html("Жду ответа");
+    $('#tags').val("");
     gameChangeSrc();
 }
+
+
+$( function() {
+    var availableTags = [
+      "Ajin",
+      "Ansatsu Kyoushitsu",
+      "Biohazard: Vendetta",
+      "Code Geass",
+      "Godzilla",
+      "JoJo's Bizarre Adventure",
+      "Overlord",
+      "Owari no Seraph",
+      "Sakamoto Desu ga?",
+      "Servamp",
+      "Towa no Quon",
+      "Yakusoku no Neverland"
+    ];
+    $( "#tags" ).autocomplete({
+      source: availableTags
+    });
+  } );
 
 

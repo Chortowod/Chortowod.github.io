@@ -66,15 +66,6 @@ header a, .menu-dropdown {
   transition: text-shadow 0.3s ease;
 }
 
-#opVideo {
-  display: block;
-  margin: auto;
-  width: 720px;
-  height: 405px;
-  visibility: hidden;
-  border-radius: 10px;
-}
-
 #gameList {
   display: table;
   margin: auto;
@@ -110,6 +101,7 @@ img[alt="RAS"] {
 footer {
   position: relative;
   bottom: 5px;
+  margin-top: 200px;
   width: 100%;
   text-align: center;
 }
@@ -127,6 +119,71 @@ header > section {
   text-align: center;
 }
 
-.resultDiv {
-  display: inline;
+.videoStuff {
+  text-align: center;
+  font-weight: bold;
+  text-shadow: 1px 1px 6px #ffffffa1;
 }
+
+.resultCircle, #opVideo {
+  display: inline-block;
+}
+
+.resultCircle {
+  transition: background-color 1s ease;
+  width: 150px;
+  position: relative;
+  margin-left: 20px;
+  margin-right: 20px;
+  bottom: 185px;
+  height: 150px;
+  display: inline-flex;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 75px;
+  color: #181a1b;
+  
+  background: 
+      radial-gradient(circle at 50% 0,
+        rgba(255,0,0,.5),
+        rgba(255,0,0,0) 70.71%),
+      radial-gradient(circle at 6.7% 75%,
+        rgba(0,0,255,.5),
+        rgba(0,0,255,0) 70.71%),
+      radial-gradient(circle at 93.3% 75%,
+        rgba(0,255,0,.5),
+        rgba(0,255,0,0) 70.71%) beige;
+}
+
+#opVideo {
+  visibility: hidden;
+  border-radius: 20px;
+  width: 720px;
+  height: 405px;
+}
+
+/* Строка с выбором ответа */
+.ui-widget { text-align: center;	margin-top: 0px; }
+.ui-widget > #tags { display: inline-block; width: 30%; }
+
+
+
+
+/* .resultCircle {
+  text-align: center;
+  width: 150px;
+  height: 150px;
+  background: 
+      radial-gradient(circle at 50% 0,
+        rgba(255,0,0,.5),
+        rgba(255,0,0,0) 70.71%),
+      radial-gradient(circle at 6.7% 75%,
+        rgba(0,0,255,.5),
+        rgba(0,0,255,0) 70.71%),
+      radial-gradient(circle at 93.3% 75%,
+        rgba(0,255,0,.5),
+        rgba(0,255,0,0) 70.71%) beige;
+  border-radius: 75px;
+  position: relative;
+  top: 250px;
+} */

@@ -3,12 +3,12 @@
   <head>
     <meta charset="utf-8">
     <title>Project Quiz</title>
+    <link rel="stylesheet" href="css/jquery-ui.css">
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
     
     <header>
-      <img src="./img/header.jpg" alt="headerImg">
       <section>
         <a href="index.html">Главная</a>
         <a href="registration.html">Регистрация</a>
@@ -23,37 +23,26 @@
           </div>
         </div>
       </section>
-      <img src="./img/footer.jpg" alt="headerFootImg">
     </header>
 
     <main>
       <br>
       <section>
-        <!-- <ul id="gameList">
-          <li id="Sakamoto">Sakamoto</li>
-          <li id="Ajin">Ajin</li>
-          <li id="Overlord">Overlord</li>
-        </ul> -->
-        <button id="startButton">Старт!</button>
-        <select name="opTitle" id="opTitleNames">
-          <option value="none" hidden="">---------</option>
-          <option value="Ajin">Ajin</option>
-          <option value="Ansatsu Kyoushitsu">Ansatsu Kyoushitsu</option>
-          <option value="Biohazard: Vendetta">Biohazard: Vendetta</option>
-          <option value="Code Geass">Code Geass</option>
-          <option value="Godzilla">Godzilla</option>
-          <option value="JoJo's Bizarre Adventure">JoJo's Bizarre Adventure</option>
-          <option value="Overlord">Overlord</option>
-          <option value="Owari no Seraph">Owari no Seraph</option>
-          <option value="Sakamoto Desu ga?">Sakamoto Desu ga?</option>
-          <option value="Servamp">Servamp</option>
-          <option value="Towa no Quon">Towa no Quon</option>
-          <option value="Yakusoku no Neverland">Yakusoku no Neverland</option>
-        </select>
-        <button id="nextButton" disabled>Ответить!</button>
-        <p id="showResult">Жду ответа</p>
-        <div class="resultDiv">Набрано очков: </div><div id="pointsDiv" class="resultDiv">0</div>
-        <video id="opVideo" src="#" !controls width="680" height="382,5"></video>
+        <div class="videoStuff">
+          <div class="resultCircle">
+            <div id="showResult">Жду ответа</div>
+          </div>
+          <video id="opVideo" src="#" !controls></video>
+          <div class="resultCircle">
+            <div id="pointsDiv">Набрано очков: 0</div>
+          </div>
+        </div>
+        
+        <div class="ui-widget">
+          <button id="startButton">Старт!</button>
+          <input id="tags">
+          <button id="nextButton" disabled>Ответить!</button>
+        </div>
 
       </section>
     </main>
@@ -62,6 +51,7 @@
     <footer>&copy; Проект "Викторина" (название временное), 2020</footer>
 
     <script type="text/javascript" src="scripts/jquery-3.5.1.js"></script>
+    <script type="text/javascript" src="scripts/jquery-ui.js"></script>
     <script type="text/javascript" src="scripts/songsButJq.js"></script>
   </body>
 </html>
