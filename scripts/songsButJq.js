@@ -23,15 +23,15 @@ function gameStart() {
   count = 0;
   points = 0;
   $('#pointsDiv').html(points);
-  $('#showResult').html("Жду ответа");
-  $('#nextButton').on("click", gameNext).prop("disabled", false);
+  $('#showResult').html(" ");
+  $('#nextButton').on("click", gameNext).prop("disabled", false).html("Ответить!");;
   $('#startButton').off("click", gameStart).html("Стоп!").on("click", gameStop);
   gameChangeSrc();
 }
 
 function gameStop() {
     $('#startButton').off("click", gameStop).html("Рестарт!").on("click", gameStart);
-    $('#nextButton').off("click", gameNext).prop("disabled", true);
+    $('#nextButton').off("click", gameNext).off("click", gameNextPlay).prop("disabled", true);
     $('#opVideo').prop('src', "#").trigger('pause');
     $('#showResult').html("Игра окончена.");
 }
@@ -41,6 +41,10 @@ function gameChangeSrc() {
 }
 
 function gameNext() {
+    $('#nextButton').off("click", gameNext).on("click", gameNextPlay);
+    $('#nextButton').html("Дальше!");
+    $('#opVideo').trigger('pause').prop('currentTime', 0).trigger('play');
+    $('#opVideo').css('visibility', 'visible');
     if ($('select').val() == gameArray[count].gameName) {
         $('#showResult').html("Верно!");
         $('#pointsDiv').html(++points);
@@ -48,10 +52,18 @@ function gameNext() {
     else {
         $('#showResult').html("Неверно!");
     }
+
+}
+
+function gameNextPlay() {
     if (++count > 9) {
         gameStop();
         return;
     }
+    $('#nextButton').off("click", gameNextPlay).on("click", gameNext);
+    $('#nextButton').html("Ответить!");
+    $('#opVideo').css('visibility', 'hidden');
+    $('#showResult').html(" ");
     gameChangeSrc();
 }
 

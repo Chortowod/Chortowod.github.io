@@ -71,6 +71,8 @@ header a, .menu-dropdown {
   margin: auto;
   width: 720px;
   height: 405px;
+  visibility: hidden;
+  border-radius: 10px;
 }
 
 #gameList {
