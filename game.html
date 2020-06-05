@@ -5,8 +5,15 @@
     <title>Project Quiz</title>
     <link rel="stylesheet" href="css/jquery-ui.css">
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/game.css">
   </head>
   <body>
+
+    <div id="context">
+      <ul class="context-menu">
+        <li><a href="#">Сохранить позицию элемента</a></li>
+      </ul>
+    </div>
     
     <header>
       <section>
@@ -29,18 +36,18 @@
       <br>
       <section>
         <div class="videoStuff">
-          <div class="resultCircle">
+          <div class="resultCircle" id="draggable">
             <div id="showResult">Жду ответа</div>
           </div>
           <video id="opVideo" src="#" !controls></video>
-          <div class="resultCircle">
+          <div class="resultCircle" id="draggable2">
             <div id="pointsDiv">Набрано очков: 0</div>
           </div>
         </div>
         
         <div class="ui-widget">
           <button id="startButton">Старт!</button>
-          <input id="tags">
+          <input id="tags" disabled>
           <button id="nextButton" disabled>Ответить!</button>
         </div>
 
@@ -52,6 +59,7 @@
 
     <script type="text/javascript" src="scripts/jquery-3.5.1.js"></script>
     <script type="text/javascript" src="scripts/jquery-ui.js"></script>
+    <script type="text/javascript" src="scripts/confetti.js"></script>
     <script type="text/javascript" src="scripts/songsButJq.js"></script>
   </body>
 </html>

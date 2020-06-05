@@ -1,0 +1,78 @@
+/* Без шапки-футера отступ для выпадающего меню не нужен */
+.menu-dropdown-submenu { padding-top: 0; }
+main { margin-top: 60px; }
+.videoStuff {
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 1px 1px 6px #ffffffa1;
+}
+
+.resultCircle {
+    transition: background-color 1s ease;
+    width: 150px;
+    position: relative;
+    margin-left: 20px;
+    margin-right: 20px;
+    bottom: 185px;
+    height: 150px;
+    display: inline-flex;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 75px;
+    color: #181a1b;
+    
+    background: 
+        radial-gradient(circle at 50% 0,
+          rgba(255,0,0,.5),
+          rgba(255,0,0,0) 70.71%),
+        radial-gradient(circle at 6.7% 75%,
+          rgba(0,0,255,.5),
+          rgba(0,0,255,0) 70.71%),
+        radial-gradient(circle at 93.3% 75%,
+          rgba(0,255,0,.5),
+          rgba(0,255,0,0) 70.71%) beige;
+}
+  
+#opVideo {
+    visibility: hidden;
+    border-radius: 20px;
+    width: 720px;
+    height: 405px;
+}
+  
+  /* Строка с выбором ответа */
+.ui-widget { text-align: center;	margin-top: 0px; }
+.ui-widget > #tags { display: inline-block; width: 30%; }
+  
+#context {
+    text-align: center;
+    display: inline-block;
+    position: absolute;
+    background: #fff;
+    box-shadow: 2px 2px 15px rgba(0,0,0,.5);
+    display: none;
+    z-index: 2;
+    border-radius: 5px;
+}
+  
+.context-menu {
+    list-style: none;
+    padding: 0px;
+    margin:0px;
+}
+  
+.context-menu a{
+    display: block;
+    width: 150px;
+    padding: 2px;
+    color: #333;
+    text-decoration: none;
+    text-shadow: none;
+    font-weight: 600;
+    font-size: 14px;
+}
+  
+.context-menu a:hover{
+    background:#ddd;
+    border-radius: 5px;
+}

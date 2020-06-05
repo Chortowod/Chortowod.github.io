@@ -11,20 +11,41 @@ var gameArray = [
   {"gameName":"Servamp","gameUrl":"https://files.catbox.moe/mvvrau.webm"}
 ];
 
-
-
-$('#opVideo').prop('volume', 0.1);
-$('#startButton').on('click', gameStart);
+var availableTags = [
+  "Ajin",
+  "Ansatsu Kyoushitsu",
+  "Biohazard: Vendetta",
+  "Code Geass",
+  "Godzilla",
+  "JoJo's Bizarre Adventure",
+  "Overlord",
+  "Owari no Seraph",
+  "Sakamoto Desu ga?",
+  "Servamp",
+  "Towa no Quon",
+  "Yakusoku no Neverland"
+];
 
 var count = 0;
 var points = 0;
-var greenB = "radial-gradient(circle at 93.3% 75%, rgba(0,255,0,.5), rgba(0,255,0,0) 70.71%) beige";
+
+$('#opVideo').prop('volume', 0.1);
+$('#startButton').on('click', gameStart);
+$("#tags").autocomplete( {source: availableTags} );
+$("#draggable").draggable();
+$("#draggable2").draggable();
+// Кастомное контекстное меню
+$(".resultCircle").on("contextmenu", showContextCircle);
+$(document).bind("mousedown", closeContextCircle);
+
 
 function gameStart() {
   count = 0;
   points = 0;
+  removeConfetti();
   $('#pointsDiv').html("Набрано очков: " + points);
   $('#showResult').html("Жду ответа");
+  $('#tags').prop('disabled', false);
   $('#nextButton').on("click", gameNext).prop("disabled", false).html("Ответить!");
   $('#startButton').off("click", gameStart).html("Стоп!").on("click", gameStop);
   gameChangeSrc();
@@ -36,6 +57,7 @@ function gameStop() {
     $('#opVideo').prop('src', "#").trigger('pause');
     $('#showResult').html("Игра окончена!");
     $('.resultCircle').css('background-color', '');
+    startConfetti();
 }
 
 function gameChangeSrc() {
@@ -47,6 +69,7 @@ function gameNext() {
     $('#nextButton').html("Дальше!");
     $('#opVideo').trigger('pause').prop('currentTime', 0).trigger('play');
     $('#opVideo').css('visibility', 'visible');
+    $('#tags').prop('disabled', true);
     if ($('#tags').val() == gameArray[count].gameName) {
         $('.resultCircle').css('background-color', '#04ff00');
         $('#showResult').html("Верно! Это " + gameArray[count].gameName);
@@ -56,7 +79,6 @@ function gameNext() {
         $('.resultCircle').css('background-color', '#ff0000');
         $('#showResult').html("Неверно! Это " + gameArray[count].gameName);
     }
-
 }
 
 function gameNextPlay() {
@@ -64,6 +86,7 @@ function gameNextPlay() {
         gameStop();
         return;
     }
+    $('#tags').prop('disabled', false);
     $('.resultCircle').css('background-color', '');
     $('#nextButton').off("click", gameNextPlay).on("click", gameNext);
     $('#nextButton').html("Ответить!");
@@ -73,25 +96,17 @@ function gameNextPlay() {
     gameChangeSrc();
 }
 
+function showContextCircle() {
+  $("#context").css( {top: event.pageY + 2, left: event.pageX + 2} );
+  $("#context").fadeIn();
+  return false;
+}
 
-$( function() {
-    var availableTags = [
-      "Ajin",
-      "Ansatsu Kyoushitsu",
-      "Biohazard: Vendetta",
-      "Code Geass",
-      "Godzilla",
-      "JoJo's Bizarre Adventure",
-      "Overlord",
-      "Owari no Seraph",
-      "Sakamoto Desu ga?",
-      "Servamp",
-      "Towa no Quon",
-      "Yakusoku no Neverland"
-    ];
-    $( "#tags" ).autocomplete({
-      source: availableTags
-    });
-  } );
+function closeContextCircle() {
+  if ($(event.target).is('.resultCircle') && event.which == 3)
+    return false;
+  if (!$(event.target).parents(".context-menu").length > 0)
+    $("#context").fadeOut();
+}
 
-
+  

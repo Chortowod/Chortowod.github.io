@@ -1,8 +1,4 @@
-@font-face {
-  font-family: 'Dark Euphorigenic';
-  src: url('./fonts/DarkEuphorigenic.ttf');
-}
-
+@font-face { font-family: 'Dark Euphorigenic'; src: url('./fonts/DarkEuphorigenic.ttf'); }
 
 body {
   background-color: #181a1b;
@@ -16,7 +12,6 @@ main {
 .preload * {
   transition: none !important;
 }
-
 
 main a:link { color: #4fb0ff; }
 main a:visited { color: #ae98f2; }
@@ -47,6 +42,7 @@ header {
   border-radius: 0px 0px 20px 20px;
   padding-top: 1.2%;
   opacity: 0;
+  width: 19.5%;
   transition: opacity 0.5s ease;
   pointer-events: none;
 }
@@ -70,6 +66,11 @@ header a, .menu-dropdown {
   display: table;
   margin: auto;
   padding-bottom: 10px;
+}
+
+header > section {
+  width: 100%;
+  text-align: center;
 }
 
 header a:hover{
@@ -113,77 +114,3 @@ footer {
   text-align: justify;
   text-indent: 2.5em;
 }
-
-header > section {
-  width: 100%;
-  text-align: center;
-}
-
-.videoStuff {
-  text-align: center;
-  font-weight: bold;
-  text-shadow: 1px 1px 6px #ffffffa1;
-}
-
-.resultCircle, #opVideo {
-  display: inline-block;
-}
-
-.resultCircle {
-  transition: background-color 1s ease;
-  width: 150px;
-  position: relative;
-  margin-left: 20px;
-  margin-right: 20px;
-  bottom: 185px;
-  height: 150px;
-  display: inline-flex;
-  justify-content: center;
-  flex-direction: column;
-  border-radius: 75px;
-  color: #181a1b;
-  
-  background: 
-      radial-gradient(circle at 50% 0,
-        rgba(255,0,0,.5),
-        rgba(255,0,0,0) 70.71%),
-      radial-gradient(circle at 6.7% 75%,
-        rgba(0,0,255,.5),
-        rgba(0,0,255,0) 70.71%),
-      radial-gradient(circle at 93.3% 75%,
-        rgba(0,255,0,.5),
-        rgba(0,255,0,0) 70.71%) beige;
-}
-
-#opVideo {
-  visibility: hidden;
-  border-radius: 20px;
-  width: 720px;
-  height: 405px;
-}
-
-/* Строка с выбором ответа */
-.ui-widget { text-align: center;	margin-top: 0px; }
-.ui-widget > #tags { display: inline-block; width: 30%; }
-
-
-
-
-/* .resultCircle {
-  text-align: center;
-  width: 150px;
-  height: 150px;
-  background: 
-      radial-gradient(circle at 50% 0,
-        rgba(255,0,0,.5),
-        rgba(255,0,0,0) 70.71%),
-      radial-gradient(circle at 6.7% 75%,
-        rgba(0,0,255,.5),
-        rgba(0,0,255,0) 70.71%),
-      radial-gradient(circle at 93.3% 75%,
-        rgba(0,255,0,.5),
-        rgba(0,255,0,0) 70.71%) beige;
-  border-radius: 75px;
-  position: relative;
-  top: 250px;
-} */
