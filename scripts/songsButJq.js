@@ -57,7 +57,6 @@ function gameStop() {
     $('#opVideo').prop('src', "#").trigger('pause');
     $('#showResult').html("Игра окончена!");
     $('.resultCircle').css('background-color', '');
-    startConfetti();
 }
 
 function gameChangeSrc() {
@@ -84,6 +83,7 @@ function gameNext() {
 function gameNextPlay() {
     if (++count > 9) {
         gameStop();
+        startConfetti();
         return;
     }
     $('#tags').prop('disabled', false);
@@ -108,5 +108,3 @@ function closeContextCircle() {
   if (!$(event.target).parents(".context-menu").length > 0)
     $("#context").fadeOut();
 }
-
-  
